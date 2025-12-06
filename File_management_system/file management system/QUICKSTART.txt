@@ -1,0 +1,94 @@
+FILE MANAGEMENT SYSTEM - QUICK START GUIDE
+==========================================
+
+WINDOWS QUICK START:
+===================
+
+1. cd d:\file management system
+
+2. python -m venv venv
+
+3. venv\Scripts\activate
+   (you should see (venv) in your prompt)
+
+4. pip install -r requirements.txt
+   (wait for "Successfully installed...")
+
+5. python manage.py makemigrations
+
+6. python manage.py migrate
+
+7. python manage.py runserver
+
+8. Open: http://localhost:8000
+
+
+MAC/LINUX QUICK START:
+======================
+
+1. cd path/to/file\ management\ system
+
+2. python3 -m venv venv
+
+3. source venv/bin/activate
+   (you should see (venv) in your prompt)
+
+4. pip install -r requirements.txt
+   (wait for "Successfully installed...")
+
+5. python manage.py makemigrations
+
+6. python manage.py migrate
+
+7. python manage.py runserver
+
+8. Open: http://localhost:8000
+
+
+FEATURES:
+=========
+✓ Upload files with descriptions
+✓ Search by description (case-insensitive)
+✓ Filter by file type, date range
+✓ Sort by date or description
+✓ Export results to Excel
+✓ Download/Delete files
+✓ Responsive design
+✓ Pagination (10 records per page)
+
+
+FILE STRUCTURE:
+===============
+config/          - Django configuration
+records/         - Main app with models, views, forms
+  ├── static/    - CSS and JavaScript files
+  ├── templates/ - HTML template
+  └── migrations/ - Database migrations (created after first setup)
+manage.py        - Django management script
+requirements.txt - Python dependencies
+
+
+DEACTIVATE VIRTUAL ENVIRONMENT:
+================================
+Windows: venv\Scripts\deactivate
+Mac/Linux: deactivate
+
+
+COMMON COMMANDS:
+================
+Start server:           python manage.py runserver
+Stop server:            Press Ctrl+C
+Create superuser:       python manage.py createsuperuser
+Reset database:         Delete db.sqlite3, then run makemigrations and migrate
+View database in admin: http://localhost:8000/admin
+
+
+TROUBLESHOOTING:
+================
+- Virtual env not working? Reinstall: python -m venv venv
+- Module not found? Run: pip install -r requirements.txt
+- Database errors? Run: python manage.py migrate
+- Still having issues? See SETUP.md for detailed guide
+
+
+For detailed setup instructions, see SETUP.md
