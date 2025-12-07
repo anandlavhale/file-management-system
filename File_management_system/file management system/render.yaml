@@ -3,10 +3,15 @@ services:
     name: file-management-system
     env: python
     plan: free
-    buildCommand: pip install -r requirements.txt && python manage.py collectstatic --noinput
+    buildCommand: >
+      pip install -r requirements.txt &&
+      python manage.py migrate &&
+      python manage.py collectstatic --noinput --clear
     startCommand: gunicorn config.wsgi:application
     envVars:
       - key: PYTHON_VERSION
         value: "3.13"
       - key: DEBUG
         value: "False"
+      - key: PYTHONUNBUFFERED
+        value: "true"
